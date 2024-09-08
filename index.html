@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>Test index.html</h1>
+    <form action="{{ url_for('search_username')}}" method="POST">
+        <label for="search">Search</label>
+        <input type="text" id="search" name="search">
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <p>Manage users below:</p>
+    {% for user in users %}
+        <p> USERNAME: {{user.username}} <br>
+            {%for email in user.emails%}
+                EMAIL: {{email.email}} <br>
+            {% endfor %}  
+            PASSWORD: {{user.password}} <br>
+            <a href="{{url_for('user_delete', user_id=user.id)}}">[Delete]</a>
+            <a href="{{url_for('user_edit', user_id=user.id)}}">[Edit]</a>
+            <hr>
+        </p>
+    {% endfor%}
+
+    <a href="{{ url_for('user_form') }}">Add User</a>
+
+{% endblock %}
+

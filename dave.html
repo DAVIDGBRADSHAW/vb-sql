@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="../static/css/styles.css">
+        <link rel="icon type=image/jpg" href="dave-logo.jpg">
+<title> Info page 2</title>
+</head>
+<body>
+   
+{% extends "base.html" %}
+
+{% block content %}
+  
+<br>
+<div class="photo">Please fill in details below
+        <img src="dave-logo.jpg" width="50">
+
+</div><br><br>   <textarea name="textarea" rows="10" cols="108" max="1000">Write something about youe photo/ art image</textarea>
+<br>
+<br>
+<div class="enter"> Enter your details below</div><br>
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name"placeholder="first name">
+<br>
+<br>
+<label for="surname">&nbsp;&nbsp;&nbsp;&nbsp;Surname</label">
+<input type="text" id="surname" placeholder="surname">
+<br><br>
+<label for="email">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email</label>
+<input type="email" id="email" placeholder="full email address"></label><br><br>
+<label for="phone">&nbsp;&nbsp;&nbsp;&nbsp;Mobile</label>
+<input type="tel" id="phone" placeholder="08x-" minlength="10" maxlength="10">
+<br><br>
+<label for="tel id="phone">Landline</label>
+<input type="tel" id="phone" pattern="0-9">
+<br><br>
+<label for="bday">Enter your date of birth</label>
+<input type="date" id="bday"><br>
+<br>
+<label for="quanity">How many raffle ticket are you buying </label>
+<input type="number" id="quanity" min="0" max="10">
+<br><br>
+<input type="Reset">
+<br><br>
+<label for="terms">Do you agree to terms and conditions<input type="checkbox" id="quanity"></label>
+<br><br>
+</div>
+<button><a href="credit-card.html">NEXT</a></button>
+        <br>
+        <br>
+       
+</form>
+<br>
+<br><div class="top-box">   
+    <button class=""> <a href="#">Back to Top</a></button>
+    <input id="email" type="hidden" placeholder="browse"</input>
+</form>
+{% endblock %}
+</html>

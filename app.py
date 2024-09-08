@@ -14,15 +14,11 @@ def index():
     user_from_db = db.session.query(User).all()
     return render_template("index.html", users=user_from_db)  
 
-
-
 @app.route("/search_user", methods=["POST"])
 def search_username():
     search_term = request.form.get('search')
     user_found = db.session.query(User).filter(User.username == search_term).all()
     return render_template('index.html', users=user_found)
-
-
 
 @app.route("/user_form")
 def user_form():
@@ -35,7 +31,7 @@ def user_edit(user_id):
 
 @app.route("/user_insert", methods=["POST"])
 def user_insert():
-    print(request.form)
+    #print(request.form)
     username = request.form["username"]
     password = request.form["password"]
     email = request.form["email"]

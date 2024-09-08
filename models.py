@@ -4,14 +4,6 @@ from datetime import datetime
 
 db = SQLAlchemy()
 
-class Booking(db.Model)
-from datetime import datetime
-
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import text
-
-db = SQLAlchemy()
-
 class Booking(db.Model):
     __table_args__ = {"schema": "cd"}
     __tablename__ = 'bookings'
@@ -26,15 +18,14 @@ class Booking(db.Model):
     def __str__(self):
         return f'"{self.bookid}" at {self.facid} {self.memid} ({self.starttime:%Y-%m-%d}) {self.slots}'
 
-    @staticmethod
+    @staticmetho
     def get_bookings():
-        # An example of how to use raw SQL inside a model
+       
         sql = text("""select mems.firstname, mems.surname, bks.starttime, bks.slots, bks.bookid 
                         from cd.bookings bks inner join cd.members mems on mems.memid = bks.memid 
                         order by bks.starttime desc""")
         return db.session.execute(sql).all()  # Returns just the integers
 
-class Member(db.Model):
    
 
 class Facility(db.Model):

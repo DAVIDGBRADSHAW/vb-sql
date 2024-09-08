@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+{% extends "base.html" %}
+
+{% block content %}
+  
+        <form action="{{ url_for('user_insert')}}" method="POST">
+            <label for="name">name</label>
+            <input type="text" id="username" name="username">
+    
+            <label for="email">email</label>
+            <input type="text" id="email" name="email">
+    
+            <label for="password">password</label>
+            <input type="text" id="password" name="password">
+         
+           
+        
+                <label for="password">password</label>
+                <input type="text" id="password" name="password" placeholder="confirm your password">
+<label for="name">name</label>
+<input type="text" id="username" name="username">
+        
+                bookid integer NOT NULL,
+                facid integer NOT NULL,
+                memid integer NOT NULL,
+                starttime timestamp without time zone NOT NULL,
+                slots integer NOT NULL
+            );
+
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}
+
+    
+</body>
+</html>

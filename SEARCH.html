@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+{% extends "base.html" %}
+
+{% block content %}
+
+    <P>Please Input <b>ALL</b> fields and correctly</P>
+
+    <form action="{{ url_for('search_username')}}" method="POST">
+        <label for="search">Search</label>
+        <input type="text" id="search" name="search">
+        <button type="submit">Submit</button>
+    </form>
+
+
+    <p>Manage users below:</p>
+
+<div class="subscibe">
+    <a href="{{ url_for('user_form') }}">SUBSCRIBE</a>
+    <h3> The founds result are below</h3>
+    <h4>If you think this is not you click NOT ME below</h4>
+    {% for user in users %}
+    <p> USERNAME: {{user.username}} <br>
+        {%for email in user.emails%}
+        EMAIL: {{email.email}} <br>
+        {%endfor%}
+        PASSWORD: {{user.password}} <br>
+    </p>
+    </div>
+    <br>
+    <hr>
+    <a href="not_me.html"> NOT ME</a>
+    <br>
+    <a href="PAGE1.html"> BACK</a>
+
+    <hr>
+    <br>
+<div class="amend">
+        <a href="{{url_for('user_delete', user_id=user.id)}}">Delete</a>
+        <a href="{{url_for('user_edit', user_id=user.id)}}">Edit</a>
+        
+    </div>
+
+{% endfor%}
+{% endblock %}
+  
+</body>
+</html>
+
